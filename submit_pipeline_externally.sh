@@ -1,0 +1,16 @@
+python3 pipeline.py \
+    --model RETFound_mae \
+    --savemodel \
+    --global_pool \
+    --batch_size 16 \
+    --world_size 1 \
+    --epochs 100 \
+    --blr 5e-3 --layer_decay 0.65 \
+    --weight_decay 0.05 --drop_path 0.2 \
+    --nb_classes 5 \
+    --input_size 224 \
+    --task RETFound_mae_meh-IDRiD \
+    --finetune RETFound_mae_meh \
+    --pipeline-external \
+    --pipeline-host "$KF_PIPELINES_HOST" \
+    --pipeline-namespace "$KF_PIPELINES_NAMESPACE" \
